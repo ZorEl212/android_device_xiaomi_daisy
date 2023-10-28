@@ -10,7 +10,7 @@ $(call inherit-product, device/xiaomi/msm8953-common/msm8953.mk)
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-lineage
+    $(LOCAL_PATH)/overlay-superior
 
 PRODUCT_PACKAGES += \
     DaisyFrameworkOverlay
@@ -78,3 +78,9 @@ endif
 
 # Call the proprietary setup
 $(call inherit-product, vendor/xiaomi/daisy/daisy-vendor.mk)
+
+# Graphics
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    vendor/qcom/opensource/commonsys-intf/display \
+    vendor/qcom/opensource/display
